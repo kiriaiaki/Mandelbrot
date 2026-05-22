@@ -24,8 +24,8 @@ neon-opt: mandelbrot_neon.cpp
 	./$(TARGET)
 
 
-dneon-opt: mandelbrot_dneon.cpp
-	$(CC) -O3 -arch arm64 -ffast-math -mcpu=apple-m4 -mtune=apple-m4 -funroll-loops -flto -o $(TARGET) mandelbrot_dneon.cpp -lraylib -lm $(LDFLAGS)
+dneon-opt: mandelbrot_double_neon.cpp
+	$(CC) -O3 -arch arm64 -ffast-math -mcpu=apple-m4 -mtune=apple-m4 -funroll-loops -flto -o $(TARGET) mandelbrot_double_neon.cpp -lraylib -lm $(LDFLAGS)
 	./$(TARGET)
 
 
